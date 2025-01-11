@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser,faBars } from "@fortawesome/free-solid-svg-icons";
 import cart from"../../assets/images/Header/carts.png";
 import "./Header.css";
-
 const Header = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
 
@@ -39,6 +38,35 @@ const handleClose=()=> setShowOffcanvas(false)
             <Nav.Link href="#Menu">Menu</Nav.Link>
             <Nav.Link href="#Feedback">Feedback</Nav.Link>
             
+
+            {/* <Button
+      className="btn-getstarted mt-3"
+      onClick={isLoggedIn ? onProfileClick : onLoginClick}
+    >
+      {isLoggedIn ? (
+        <>
+          <img
+            src={user.profilePicture}
+            alt="Profile"
+            style={{
+              width: "30px",
+              height: "30px",
+              borderRadius: "50%",
+              marginRight: "10px",
+            }}
+          />
+          {user.name}
+        </>
+      ) : (
+        <>
+          <FontAwesomeIcon icon={faUser} className="me-2" />
+          Login/Signup
+        </>
+      )}
+    </Button> */}
+
+           
+
             <Button className="btn-getstarted">
               <FontAwesomeIcon icon={faUser} className="me-2" />
               Login/Signup
@@ -66,10 +94,37 @@ const handleClose=()=> setShowOffcanvas(false)
             <Nav.Link onClick={handleClose} href="#Popular">Popular</Nav.Link>
             <Nav.Link  onClick={handleClose} href="#Menu"> Menu</Nav.Link>
             <Nav.Link  onClick={handleClose} href="#Feedback">Feedback</Nav.Link>
-            <Button onClick={handleClose}  className="btn-getstarted mt-3">
+            <Button className="btn-getstarted mt-3">
                 <FontAwesomeIcon icon={faUser} className="me-2" />
                 Login/Signup
               </Button>
+
+              {/* <Button
+      className="btn-getstarted mt-3"
+      onClick={isLoggedIn ? onProfileClick : onLoginClick}
+    >
+      {isLoggedIn ? (
+        <>
+          <img
+            src={user.profilePicture}
+            alt="Profile"
+            style={{
+              width: "30px",
+              height: "30px",
+              borderRadius: "50%",
+              marginRight: "10px",
+            }}
+          />
+          {user.name}
+        </>
+      ) : (
+        <>
+          <FontAwesomeIcon icon={faUser} className="me-2" />
+          Login/Signup
+        </>
+      )}
+    </Button> */}
+
             </Nav>
           </Offcanvas.Body>
         </Offcanvas>
