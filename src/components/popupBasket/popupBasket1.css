@@ -1,0 +1,235 @@
+ 
+
+.head-rectangle{
+box-sizing: border-box;
+position: absolute;
+width: 1270px;
+height: 229px;
+ 
+background: #028643;
+border: 1px solid rgba(0, 0, 0, 0.11);
+border-radius: 8px 8px 0px 0px;
+
+}
+
+.container{/* Rectangle 52 */
+
+     
+   color: #FFFFFF;
+    box-shadow: 20px 24px 44px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Base Styles */
+:root {
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    color: #03081F;
+}
+
+/* Responsive Container */
+.group-46 {
+    position: relative;
+    max-width: 90%; /* Maintain responsiveness */
+    margin: 2rem auto;
+}
+
+/* Rectangle 52 */
+.rectangle-52 {
+    width: 100%;
+    max-width: 1270px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    box-shadow: 0.625rem 0.75rem 2.75rem rgba(0, 0, 0, 0.5);
+    border-radius: 0.75rem;
+}
+
+/* Rectangle 53 */
+.rectangle-53 {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    background: url(image.png) no-repeat center/cover;
+    border-radius: 0.75rem 0.75rem 0 0;
+}
+
+/* Titles */
+.special-offers,
+.meal-deal-1,
+.select-first-pizza,
+.add-more,
+.delivery-tax-info {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.special-offers,
+.meal-deal-1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.select-first-pizza {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.add-more {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.delivery-tax-info {
+    font-size: 1rem;
+}
+
+/* Basket Section */
+.rectangle-77 {
+    width: 100%;
+    max-width: 1270px;
+    background: #F9F9F9;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    border-radius: 0.75rem;
+}
+
+.rectangle-78 {
+    width: 100%;
+    background: #028643;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.my-basket {
+    text-align: center;
+    font-size: 3rem;
+    color: #FFFFFF;
+}
+
+/* Price Section */
+.sub-total,
+.discounts,
+.delivery-fee,
+.total-to-pay {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem;
+}
+
+.price-127-90,
+.discount-3,
+.discount-2-50,
+.final-price {
+    text-align: right;
+    font-size: 1.5rem;
+    color: #212121;
+}
+
+/* Coupon Code */
+.rectangle-81 {
+    max-width: 90%;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #F7F7F7;
+    border: 1px solid #CFCFCF;
+    border-radius: 7.5rem;
+}
+
+.apply-coupon {
+    text-align: center;
+    font-size: 1.25rem;
+    color: #000;
+}
+
+.forward-button {
+    width: 2.5rem;
+    height: auto;
+    background: url(.png) no-repeat center/contain;
+}
+
+/* Total Section */
+.rectangle-79 {
+    max-width: 90%;
+    margin: 1rem auto;
+    padding: 1rem;
+    background: rgba(252, 138, 6, 0.8);
+    border-radius: 0.5rem;
+}
+
+.total-to-pay,
+.final-price {
+    color: #FFFFFF;
+    font-size: 1.25rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    :root {
+        font-size: 14px; /* Reduce base font size for smaller screens */
+    }
+
+    .special-offers,
+    .meal-deal-1,
+    .select-first-pizza,
+    .add-more {
+        font-size: 1.25rem;
+    }
+
+    .sub-total,
+    .discounts,
+    .delivery-fee,
+    .total-to-pay {
+        font-size: 1.25rem;
+    }
+
+    .my-basket {
+        font-size: 2.5rem;
+    }
+
+    .rectangle-81 {
+        padding: 0.75rem;
+    }
+
+    .apply-coupon {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        font-size: 12px; /* Further reduce base font size */
+    }
+
+    .special-offers,
+    .meal-deal-1,
+    .select-first-pizza,
+    .add-more {
+        font-size: 1rem;
+    }
+
+    .my-basket {
+        font-size: 2rem;
+    }
+
+    .apply-coupon {
+        font-size: 0.875rem;
+    }
+}

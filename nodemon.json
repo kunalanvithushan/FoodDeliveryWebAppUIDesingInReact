@@ -1,0 +1,6 @@
+
+{
+  "watch": ["src"],
+  "ext": "jsx,js,json",
+  "exec": "vite"
+}
