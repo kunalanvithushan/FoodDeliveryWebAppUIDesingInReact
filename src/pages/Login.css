@@ -1,0 +1,40 @@
+.form-container {
+  max-width: 300px;
+  max-height: 300px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid #ff5500;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fbece5;
+}
+
+.form-control {
+  border-radius: 20px;
+  border: 1px solid #ff5500;
+}
+
+.form-check-input {
+  margin-top: 3px;
+}
+
+.btn-info {
+  background-color: white;
+  border-color: #007bff;
+  width: 200px;
+  border-radius: 20px;
+
+
+
+}
+
+.btn-info:hover {
+  background-color: #ff5500;
+  border-color: #0062cc;
+}
+
+.ForgetPWD {
+  text-align-last: right;
+  font-size: small;
+}
+

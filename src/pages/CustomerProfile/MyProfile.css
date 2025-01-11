@@ -1,0 +1,10 @@
+.container-fluid{
+    max-width: 300px;
+    max-height: 300px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 2px solid #ff5500;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fbece5;
+}

@@ -1,0 +1,111 @@
+
+.MyProfile {
+    padding: 0px !important;
+}
+.MyProfile ul li a:hover {
+    background-color: #ff5500;
+}
+.Logout {
+    background-color: #ff5500;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    width: 200px;
+    
+}
+.MyProfileImg{
+   border: solid 3px #ff5500; 
+}
+
+.Profile{
+    background-color: #f99a6a;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    width: 400px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 20px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.ProfileImg{
+    border: solid 3px #ff5500;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 400px;
+    margin-left: 100px; 
+}
+.ProfileSaveBtn{
+    background-color: #ff5500;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    width: 100px;
+    margin-left: 0px;
+    margin-right: 20px;
+}
+.ProfileEditBtn{
+    background-color: #ff5500;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    width: 100px;
+    margin: 20px auto;
+    
+}
+.ProfileSaveBtn:hover{
+    background-color: #f99a6a;
+    border: solid 3px #ff5500;
+}
+.ProfileBackground{
+    background-color: #ffede5;
+    padding: 0px;
+    margin: 0px;
+}
+.AddNewAddressBtn{
+    background-color: #ff5500;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    width: 200px;
+    
+   
+}
+ .DeliveryAddressBackground{
+    background-color: #ffede5;
+    padding: 0px;
+    margin: 0px;
+ }
+ .DeliveryAddressTable{
+    background-color: #ffede5;
+    text-align: center;
+    border: solid 2px #ff5500;
+    
+ }
+ .AddNewAddressBackground{
+    background-color: #ffede5;
+    
+    
+ }
+ .AddNewAddressForm{
+    background-color: #f05d1d;
+    width: 400px;
+    height: 400px;
+    border: solid 2px #ff5500;
+    
+    margin: 20px auto;
+    padding: 20px;
+    
+ }
+ .EditAddressBackground{
+    background-color: #ffede5;
+ }
+ .MyOrdersBackground{
+    background-color: #ffede5;
+    padding: 0px;
+    margin: 0px;
+ }
