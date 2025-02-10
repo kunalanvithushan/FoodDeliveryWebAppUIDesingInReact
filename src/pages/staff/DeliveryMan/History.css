@@ -1,0 +1,191 @@
+/* DeliveryHistory.css */
+
+/* Container for the history section */
+.delivery-history-container {
+  margin: 20px;
+  
+  background-color: rgb(249, 29, 9);
+  border-radius: 10px;
+
+  /* Position the container on the right side */
+  position: absolute;
+  top: 20px;
+   right: 30px;
+   padding: 58px;
+   /* Set a fixed width for the container */
+   width: 68%; 
+   max-width: 1000px; /* Allow container to take full width within the limit */
+  box-sizing: border-box;
+
+  /* Allow the container to scroll if the content exceeds the max height */
+  max-height: 100%; /* Limit the height to 80% of the viewport height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Heading style */
+.delivery-history-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* History list container */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Individual order item */
+.history-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Order info section */
+.order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.order-info h4 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.order-info p {
+  margin: 5px 0;
+}
+
+/* Order items section */
+.order-items p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* View details button */
+.view-details-btn {
+  align-self: flex-start;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #444647;  /* Default color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for view details button */
+.view-details-btn:hover {
+  background-color: #2f2f2f; /* Dark gray color for hover */
+}
+
+/* Media Queries */
+
+/* For small screens (up to 600px) - Mobile view */
+@media only screen and (max-width: 600px) {
+  .delivery-history-container {
+    position: static;
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .delivery-history-container h2 {
+    font-size: 18px;  /* Smaller font for better readability */
+  }
+
+  .history-item {
+    padding: 8px;  /* Less padding for space optimization */
+  }
+
+  .order-info h4 {
+    font-size: 14px;  /* Decreased font size */
+  }
+
+  .order-items p {
+    font-size: 12px;  /* Smaller text for better fitting */
+  }
+
+  .view-details-btn {
+    font-size: 14px;
+    padding: 6px 12px;  /* Smaller button padding */
+  }
+}
+
+/* For medium screens (between 600px to 1024px) - Tablet view */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .delivery-history-container {
+    width: 90%;
+    margin: 10px;
+    padding: 15px;
+    max-height: 80vh;  /* Increased max height for more content visibility */
+  }
+
+  .delivery-history-container h2 {
+    font-size: 20px;  /* Reduced font size for better fit */
+  }
+
+  .history-item {
+    padding: 12px;
+  }
+
+  .order-info h4 {
+    font-size: 16px;  /* Adjusted font size for medium screens */
+  }
+
+  .order-items p {
+    font-size: 14px;
+  }
+
+  .view-details-btn {
+    font-size: 15px;
+    padding: 8px 14px;
+  }
+}
+
+/* For large screens (1024px and up) - Desktop and Large Tablets */
+@media only screen and (min-width: 1024px) {
+  .delivery-history-container {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    max-width: 865px;
+    width: 100%;
+  }
+
+  .delivery-history-container h2 {
+    font-size: 24px;
+  }
+
+  .history-list {
+    gap: 15px;
+  }
+
+  .history-item {
+    padding: 15px;
+  }
+
+  .order-info h4 {
+    font-size: 18px;
+  }
+
+  .order-items p {
+    font-size: 16px;
+  }
+
+  .view-details-btn {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+}

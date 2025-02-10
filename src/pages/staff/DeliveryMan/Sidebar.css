@@ -1,0 +1,175 @@
+/* Sidebar Styling */
+.sidebar {
+    width: 275px;
+    background-color: #f3090d;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    transform: translateX(-100%); /* Initially hidden on small screens */
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Sidebar active state (visible) */
+.sidebar.active {
+    transform: translateX(0); /* Slide in the sidebar */
+}
+
+/* Profile Section in Sidebar */
+.profile-section {
+    text-align: center;
+    margin-bottom: 23px;
+    width: 100%;
+}
+
+/* Profile Picture */
+.profile-picture {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    border: 4px solid #333;
+    background-color: rgb(205, 198, 198);
+    overflow: hidden;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Profile Name */
+.profile-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: center;
+}
+
+/* Profile Role */
+.profile-role {
+    font-size: 20px;
+    opacity: 0.8;
+    text-align: center;
+}
+
+/* Menu Styling */
+.menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.menu-item {
+    width: 100%;
+    padding: 10px 16px;
+    margin: 2px 0;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Logout Button Styling */
+.logout {
+    background-color: #540404;
+    font-weight: bold;
+}
+
+.logout:hover {
+    background-color: #710606;
+    transform: scale(1.05);
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;  /* Hidden by default */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* Media Query for Smaller Screens (below 768px) */
+@media screen and (max-width: 768px) {
+    /* Sidebar takes full screen width */
+    .sidebar {
+        width: 100%; /* Full width on small screens */
+    }
+
+    /* Sidebar active (on toggle) */
+    .sidebar.active {
+        transform: translateX(0); /* Show the sidebar */
+    }
+
+    /* Hamburger Menu */
+    .hamburger-menu {
+        display: block;  /* Display hamburger icon on mobile */
+    }
+}
+
+/* Media Query for Medium Screens (between 820px and 1180px) */
+@media screen and (min-width: 820px) and (max-width: 1180px) {
+    /* Sidebar should be fully visible on screens between 820px and 1180px */
+    .sidebar {
+        transform: translateX(0); /* Sidebar stays visible */
+        width: 275px; /* Set a specific width for the sidebar */
+    }
+
+    /* Hamburger Menu */
+    .hamburger-menu {
+        display: block; /* Show hamburger icon for screens between 820px and 1180px */
+    }
+}
+
+/* Media Query for Medium Screens (between 853px and 1280px) */
+@media screen and (min-width: 853px) and (max-width: 1280px) {
+    /* Sidebar should be fully visible on screens between 853px and 1280px */
+    .sidebar {
+        transform: translateX(0); /* Sidebar stays visible */
+        width: 275px; /* Set a specific width for the sidebar */
+    }
+
+    /* Hamburger Menu */
+    .hamburger-menu {
+        display: block; /* Show hamburger icon for screens between 853px and 1280px */
+    }
+}
+
+/* Media Query for Large Screens (1181px and up) */
+@media screen and (min-width: 1181px) {
+    /* Sidebar should be fully visible on large screens */
+    .sidebar {
+        transform: translateX(0); /* Sidebar visible */
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    /* Hide hamburger icon for large screens */
+    .hamburger-menu {
+        display: none;
+    }
+}

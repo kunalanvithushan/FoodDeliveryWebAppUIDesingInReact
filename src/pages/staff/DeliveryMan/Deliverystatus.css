@@ -1,0 +1,149 @@
+/* General Container */
+
+.delivery-status-container {
+    font-family: 'Arial', sans-serif;
+    padding: 58px;
+    /* Set a fixed width for the container */
+    width: 68%; 
+    max-width: 1000px; /* Ensure the width is responsive on smaller screens */
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #f9f9f9, #e6e6e6);
+    position: absolute; /* Positioning it absolutely to the right */
+    top: 80px; /* Adjust the top margin as needed */
+    right: 30px; /* Align to the right of the screen */
+    z-index: 10; /* Ensure it's on top */
+    max-height:85vh; /* Limit the height */
+    overflow-y: auto; /* Add a vertical scrollbar if content exceeds height */
+}
+
+/* Heading */
+.delivery-status-container h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Delivery List */
+.delivery-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.delivery-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.delivery-item:hover {
+    background-color: #f1f8ff;
+    border-left: 5px solid #007bff;
+}
+
+.delivery-info {
+    flex: 1;
+    font-size: 1.1rem;
+}
+
+.delivery-info p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.delivery-info strong {
+    color: #1e90ff;
+    font-weight: bold;
+}
+
+/* Status Actions */
+.status-actions {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Button Colors for Different Actions */
+button:first-child {
+    background-color: #ff9900;
+    color: white;
+    box-shadow: 0 4px 6px rgba(255, 153, 0, 0.3);
+}
+
+button:first-child:hover:enabled {
+    background-color: #e68900;
+    transform: translateY(-2px);
+}
+
+button:last-child {
+    background-color: #5bc0de;
+    color: white;
+    box-shadow: 0 4px 6px rgba(91, 192, 222, 0.3);
+}
+
+button:last-child:hover:enabled {
+    background-color: #4fa3c3;
+    transform: translateY(-2px);
+}
+
+/* Hover Effects for Buttons */
+button:hover:enabled {
+    background-color: #007bff;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .delivery-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .status-actions {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Adjust position of delivery status container on smaller screens */
+    .delivery-status-container {
+        position: relative; /* Return to relative for smaller screens */
+        width: 100%;
+        margin-top: 20px;
+        max-height: 60vh; /* Adjust for smaller screens */
+        overflow-y: auto;
+    }
+}

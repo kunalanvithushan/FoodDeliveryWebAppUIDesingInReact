@@ -7,6 +7,15 @@ import Footer from "./components/Footer/footer";
 //import PopupBasket1 from "./popupBasket/popupBasket1.jsx"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, Link } from "react-router-dom";
+ //shana
+import Sidebar from './pages/staff/DeliveryMan/Sidebar';
+import Delivery from './pages/staff/DeliveryMan/Delivery';
+import DeliveryProfile from './pages/staff/DeliveryMan/DeliveryProfile';
+import Deliverystatus from './pages/staff/DeliveryMan/Deliverystatus';
+import History from './pages/staff/DeliveryMan/History';
+import Notification from './pages/staff/DeliveryMan/Notification';
+
+
 
 //Gowsikan
 import Login from './pages/Login'
@@ -25,8 +34,12 @@ import MyOrders from './pages/CustomerProfile/MyOrders'
 
 function App() {
   return (
+
+
     <>
-      {/* <div className='d-flex'>
+
+    
+       {/* <div className='d-flex'>
             <div className='col-auto'>
             <MyProfile />
              </div>
@@ -41,20 +54,44 @@ function App() {
          </Routes>
     
              </div>
+             </div>
+      */}
     
     
-    
-         </div> */}
-      <Header />
-      <div div className="main-container" style={{ paddingTop: "100px" }}>
+       
+       {/* <Header />
+       <div div className="main-container" style={{ paddingTop: "100px" }}>
         <section id="Home">
-         <Home /> 
+         <Home />  
         </section>
-      </div>
-      <Footer />
+       </div>
+       <Footer /> */}
 
       
-     
+      
+
+
+        <div className="app">
+       <Sidebar />
+        <div className="main-content">
+          <Routes>
+           
+            <Route path="/delivery" element={<Delivery />} />
+            <Route path="/profile" element={<DeliveryProfile />} />
+            <Route path="/deliverystatus" element={<Deliverystatus />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/notification" element={<Notification />} />
+
+
+            { <Route path="/" element={<Delivery />} />  }
+            
+          </Routes>
+        </div>
+      </div>
+
+        
+        
+        
 
     </>
   );
