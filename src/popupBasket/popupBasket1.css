@@ -1,235 +1,265 @@
- 
-
-.head-rectangle{
-box-sizing: border-box;
-position: absolute;
-width: 1270px;
-height: 229px;
- 
-background: #028643;
-border: 1px solid rgba(0, 0, 0, 0.11);
-border-radius: 8px 8px 0px 0px;
-
-}
-
-.container{/* Rectangle 52 */
-
-     
-   color: #FFFFFF;
-    box-shadow: 20px 24px 44px rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Base Styles */
 :root {
-    font-size: 16px; /* Base font size */
+  --body-background: #ffffff; /* Light background */
+  --primary-color: #ff6347;
+  --secondary-color: #ff8c00;
+  --accent-color: #fff7e6;
+  --text-color: #333333;
+  --heading-color: #d34d3c;
+  --button-color: #ff4500;
+  --hover-color: #ff6a1f;
+  --footer-background: #f1f1f1;
+  --border-color: #ddd;
+  --font-family: 'Arial', sans-serif;
+  --star-gold: #FFD700;
+  --star-gray: #D3D3D3;
+  scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.5;
-    color: #03081F;
+/* Overlay for the basket popup */
+.basket-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-/* Responsive Container */
-.group-46 {
-    position: relative;
-    max-width: 90%; /* Maintain responsiveness */
-    margin: 2rem auto;
+.basket-card {
+  font-family: var(--font-family);
+  background-color: var(--accent-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0.1, 0.1, 0.1, 0.1);
+  padding: 10px;
+  color: var(--text-color);
+  border: var(--border-color);
 }
 
-/* Rectangle 52 */
-.rectangle-52 {
-    width: 100%;
-    max-width: 1270px;
-    margin: 0 auto;
-    background: #FFFFFF;
-    box-shadow: 0.625rem 0.75rem 2.75rem rgba(0, 0, 0, 0.5);
-    border-radius: 0.75rem;
+/* Popup container for the basket */
+.basket-popup {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
 }
 
-/* Rectangle 53 */
-.rectangle-53 {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    background: url(image.png) no-repeat center/cover;
-    border-radius: 0.75rem 0.75rem 0 0;
+/* Header section of the basket */
+.basket-header  {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 2px var(--border-color);
+ border-radius: 10px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  
+}
+.h2H {
+
+  font-weight: 500px;
+  font-family: var(--font-family);
+  font-weight: bold;
+   
 }
 
-/* Titles */
-.special-offers,
-.meal-deal-1,
-.select-first-pizza,
-.add-more,
-.delivery-tax-info {
-    text-align: center;
-    margin: 1rem 0;
+  
+
+/* Close button in the basket header */
+.close-button {
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.special-offers,
-.meal-deal-1 {
-    font-size: 1.5rem;
-    font-weight: 700;
+/* Content area for the basket items */
+.basket-content {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.select-first-pizza {
-    font-size: 1.8rem;
-    font-weight: 400;
+.headIMG {
+  width: 60px;
+  height: 50px;
 }
 
-.add-more {
-    font-size: 1.8rem;
-    font-weight: 600;
-    text-decoration: underline;
+/* Basket item styling */
+.basket-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+  border-radius: 10px;
+  grid-template-rows: 10px ;
 }
 
-.delivery-tax-info {
-    font-size: 1rem;
+.basket-item img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-/* Basket Section */
-.rectangle-77 {
-    width: 100%;
-    max-width: 1270px;
-    background: #F9F9F9;
-    border: 1px solid rgba(0, 0, 0, 0.11);
-    border-radius: 0.75rem;
+/* Item details section */
+.item-details {
+  display: flex;
+  flex-direction: column;
 }
 
-.rectangle-78 {
-    width: 100%;
-    background: #028643;
-    border-radius: 0.5rem 0.5rem 0 0;
+.item-name {
+  font-weight: bold;
+  padding-top: 5px;
 }
 
-.my-basket {
-    text-align: center;
-    font-size: 3rem;
-    color: #FFFFFF;
+/* Controls for changing item quantity */
+.item-controls {
+  display: flex;
+  align-items: center;
 }
 
-/* Price Section */
-.sub-total,
-.discounts,
-.delivery-fee,
-.total-to-pay {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 1rem;
+.control-button {
+  border: none;
+  background-color: var(--border-color);
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: var(--button-color);
+  font-size:20px ;
+  height: 25px ;
+
+
 }
 
-.price-127-90,
-.discount-3,
-.discount-2-50,
-.final-price {
-    text-align: right;
-    font-size: 1.5rem;
-    color: #212121;
+.item-quantity {
+  margin: 0 10px;
+  font-weight: bold;
 }
 
-/* Coupon Code */
-.rectangle-81 {
-    max-width: 90%;
-    margin: 2rem auto;
-    padding: 1rem;
-    background: #F7F7F7;
-    border: 1px solid #CFCFCF;
-    border-radius: 7.5rem;
+/* Footer section of the basket */
+.basket-footer {
+  margin-top: 20px;
+  border-top: 1px solid var(--primary-color);
+  padding: 10px;
+  background-color: var(--footer-background);
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  
+  border-radius: 10px;
 }
 
-.apply-coupon {
-    text-align: center;
-    font-size: 1.25rem;
-    color: #000;
+/* Total section */
+.total {
+  margin-top: 10px;
+  background: #d8d4d3;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  border: var(--primary-color);
 }
 
-.forward-button {
-    width: 2.5rem;
+/* Buttons in the footer */
+.add-button,
+.next-button {
+  background-color: #327a28;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  border: solid 1px var(--border-color);
+}
+
+.add-button {
+  width: 80%;
+}
+
+.next-button {
+  width: 100%;
+}
+
+/* Responsive Styles for Tablets and Below */
+@media screen and (max-width: 1024px) {
+  .basket-popup {
+    margin: 10%;
+    width: 80%;
+  }
+
+  .basket-item img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .basket-footer {
     height: auto;
-    background: url(.png) no-repeat center/contain;
+  }
+
+  .add-button,
+  .next-button {
+    width: 100%;
+  }
 }
 
-/* Total Section */
-.rectangle-79 {
-    max-width: 90%;
-    margin: 1rem auto;
-    padding: 1rem;
-    background: rgba(252, 138, 6, 0.8);
-    border-radius: 0.5rem;
+/* Responsive Styles for Mobile Devices */
+@media screen and (max-width: 500px) {
+  .basket-popup {
+    margin: 10% 5%;
+    height: 90vh;
+  }
+
+  .basket-item img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .item-details {
+    padding-left: 10px;
+  }
+
+  .item-name {
+    font-size: 14px;
+  }
+
+  .add-button,
+  .next-button {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
 
-.total-to-pay,
-.final-price {
-    color: #FFFFFF;
-    font-size: 1.25rem;
+/* Close button custom styling */
+.custom-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: var(--text-color);
 }
 
-/* Responsive Media Queries */
-@media (max-width: 768px) {
-    :root {
-        font-size: 14px; /* Reduce base font size for smaller screens */
-    }
-
-    .special-offers,
-    .meal-deal-1,
-    .select-first-pizza,
-    .add-more {
-        font-size: 1.25rem;
-    }
-
-    .sub-total,
-    .discounts,
-    .delivery-fee,
-    .total-to-pay {
-        font-size: 1.25rem;
-    }
-
-    .my-basket {
-        font-size: 2.5rem;
-    }
-
-    .rectangle-81 {
-        padding: 0.75rem;
-    }
-
-    .apply-coupon {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    :root {
-        font-size: 12px; /* Further reduce base font size */
-    }
-
-    .special-offers,
-    .meal-deal-1,
-    .select-first-pizza,
-    .add-more {
-        font-size: 1rem;
-    }
-
-    .my-basket {
-        font-size: 2rem;
-    }
-
-    .apply-coupon {
-        font-size: 0.875rem;
-    }
+.custom-close-button:hover {
+  color: #333333; /* Optional hover effect */
 }

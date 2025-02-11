@@ -1,0 +1,264 @@
+:root {
+    --body-background: #f9a539; /* Light warm beige background for a soft feel */
+    --primary-color: #ff6347; /* Tomato red for buttons, highlights */
+    --secondary-color: #ff8c00; /* Orange for secondary buttons or accents */
+    --accent-color: #fff7e6; /* Very light yellow for section backgrounds */
+    --text-color: #333333; /* Dark gray for readable text */
+    --heading-color: #d34d3c; /* Muted red for headings to keep consistency */
+    --button-color: #ff4500; /* Strong red for primary buttons */
+    --hover-color: #ff6a1f; /* A bright orange-red for hover effects */
+    --footer-background: #f1f1f1; /* Light gray background for footer */
+    --border-color: #ddd; /* Soft gray for borders */
+    --font-family: 'Arial', sans-serif; /* Font family */
+}
+
+/* General Container */
+.containerB {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--accent-color);
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  margin-bottom: 20%;
+  margin-top: 10%;
+  padding-top: 0;
+  padding-bottom: 0cqh;
+}
+
+
+
+
+/* Order Status Section */
+.order-status {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  
+}
+
+/* Banner Container for Order Status */
+.bannerCont {
+  background: var(--footer-background);
+  border-radius: 12px;
+  padding: 1rem;
+  color: white;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.highlight-text {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.order-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 1rem;
+}
+.inerIMG{
+width: 30px;
+font-size: 20px;
+}
+
+
+
+/* Image Section */
+.col-md-7 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+ 
+
+/* Order Status Banner Styling */
+.bannerCont:nth-child(1) {
+  background: #ffffff;
+  border: var(--border-color);
+  color: var(--text-color);
+ 
+}
+
+.bannerCont:nth-child(2) {
+  background: #ffffff;
+  border: var(--border-color);
+  color: var(--text-color);
+  height: 400px;
+}
+
+.bannerCont:nth-child(3) {
+  background: #ffffff;
+  border: var(--border-color);
+  color: var(--text-color);
+}
+
+/* Utility Classes for Spacing */
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+/* Font and Color Adjustments */
+body {
+  font-family: var(--font-family);
+  background-color: var(--body-background);
+  color: var(--text-color);
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 767px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .order-status {
+    align-items: center;
+    text-align: center;
+  }
+
+  .col-md-5,
+  .col-md-7 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .highlight-text {
+    font-size: 20px;
+    color:var(--heading-color);
+  }
+
+  .order-text {
+    font-size: 0.9rem;
+  }
+
+  
+  .bannerCont:nth-child(2){
+
+    height: 100px;
+    width: 80%;
+  }
+
+  .bannerCont:nth-child(3){
+
+    height: 100px;
+    width: 100%;
+  }
+}
+
+/* Tablet and larger screen sizes */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .order-status {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .bannerCont {
+    width: 48%;
+  }
+   
+  
+}
+
+@media (min-width: 1024px) {
+   
+
+  .order-status {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .bannerCont {
+    width: 30%;
+  }
+
+   
+}
+
+
+ 
+/* @media (max-width: 1024px) {
+
+  .Bimge {
+    padding-bottom: 0px;
+    height: 300px;
+    width:250px;
+    padding-left: 10%;
+  }
+} */
+
+.Bimge {
+  width: 100%;  
+  height: auto;  
+  max-height: 1000px;  
+  border-radius: 12px;
+  
+  padding-left: 0;
+  
+}
+
+/* Media Queries for Responsive Behaviour */
+@media (max-width: 768px) {
+  .Bimge {
+    width: 60%; /* Smaller width for smaller screens */
+    max-width: none;
+    height: auto; /* Ensure responsiveness */
+    max-height: 350px; /* Adjust height for mobile view */
+  }
+
+  .NUMimg,
+  .NUMimg2,
+  .NUMimg3 {
+     display:none; /* Reduce height proportionally */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Bimge {
+    width: 80%; /* Slightly larger width for tablets */
+    max-width: 405px; 
+    height: auto; 
+    max-height: 480px;
+    padding-left: 10%; /* Adjust padding for alignment */
+  }
+
+  
+}
+
+@media (min-width: 1024px) {
+  .Bimge {
+    width: 100%; /* Default for large screens */
+    max-width: 405px;
+    height: auto;
+    max-height: 523px;
+  }
+}
+ 
+
+.NUMimg {
+  width: 20px;  
+  height: 40px;  
+  margin-right: 40px;  
+  object-fit: contain;  
+}
+
+.NUMimg2 {
+  width: 30px;  
+  height: 60px;  
+  margin-right: 40px;  
+  object-fit: contain; 
+ 
+}
+.NUMimg3 {
+  width: 30px;  
+  height: 60px;  
+  margin-right: 40px;  
+  object-fit: contain;  
+}

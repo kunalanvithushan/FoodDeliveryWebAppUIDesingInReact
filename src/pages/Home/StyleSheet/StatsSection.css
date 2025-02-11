@@ -1,0 +1,77 @@
+:root {
+  --stats-background: #fff7e6; /* Light accent color */
+  --stats-text-color: #333333; /* Dark text color */
+  --stats-border-color: #ddd; /* Light border color */
+  --stats-value-color: #ff6347; /* Primary color for values */
+  --stats-font-family: 'Arial', sans-serif; /* Font */
+}
+.setSpace{
+  margin-top: 20%;
+  margin-bottom: 10%;
+
+}
+.stats-section {
+  background-color: var(--stats-background);
+  font-family: var(--stats-font-family);
+  color: var(--stats-text-color);
+  padding: 30px 0;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--stats-background);
+  border: 1px solid var(--stats-border-color);
+}
+
+.stat-card:not(:last-child) {
+  border-right: 1px solid var(--stats-border-color);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--stats-value-color);
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--stats-text-color);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 767px) {
+  .stats-section {
+    padding: 20px 0;
+  }
+
+  .stat-card {
+    padding: 15px;
+    min-height: 120px; /* Minimum height for mobile */
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+  }
+
+  /* Ensure the columns stack in mobile view */
+  
+  .col-12 {
+    margin-bottom: 20px; /* Space between stats cards on mobile */
+  }
+}
+
+@media (min-width: 768px) {
+   
+  .col-md-4 {
+    flex: 1 1 33%; /* 3 columns on medium and up */
+  }
+}

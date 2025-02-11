@@ -1,76 +1,123 @@
-/* Footer Container */
+ /* Footer Container */
 .footer {
-    background-color: #f8f9fa; /* Light grey background */
-    padding: 2rem 1rem;
-    border-radius: 8px;
-    margin-top: 2rem;
-  }
-  
-  /* Footer Title */
-  .footer h4 {
-    font-size: 1.5rem;
-    color: #343a40; /* Dark grey color */
-    margin-bottom: 1rem;
-  }
-  
-  /* Footer Links */
-  .footer h5, .footer h6, .footer p, .footer h3 {
-    color: #6c757d; /* Medium grey */
-    margin: 0.5rem 0;
-  }
-  
-  .footer h5 {
-    font-weight: bold;
-  }
-  
-  /* Social Media Icons */
-  .footer img {
-    margin: 0.5rem;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .footer img:hover {
-    transform: scale(1.2); /* Slight zoom effect */
-  }
-  
-  /* Address Section */
-  .footer div:last-of-type {
-    font-size: 0.9rem;
-    color: #495057; /* Greyish text */
-    margin-top: 1rem;
-  }
-  
-  /* Legal Pages Section */
-  .footer .legal-pages p {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .footer .legal-pages p:hover {
-    color: #007bff; /* Bootstrap primary color */
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
-  /* Bottom Copyright Section */
-  .footer .bg-dark {
-    background-color: #212529 !important; /* Dark grey */
-    color: #f8f9fa !important; /* Light text */
+  background-color: #f8f9fa; /* Light grey background */
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+/* Footer Title */
+.footer h4 {
+  font-size: 1.5rem;
+  color: #343a40; /* Dark grey color */
+  margin-bottom: 1rem;
+}
+
+/* Footer Links */
+.footer h5, .footer h6, .footer p, .footer h3 {
+  color: #6c757d; /* Medium grey */
+  margin: 0.5rem 0;
+}
+
+.footer h5 {
+  font-weight: bold;
+}
+
+/* Social Media Icons */
+.footer img {
+  margin: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer img:hover {
+  transform: scale(1.2); /* Slight zoom effect */
+}
+
+/* Address Section */
+.footer div:last-of-type {
+  font-size: 0.9rem;
+  color: #495057; /* Greyish text */
+  margin-top: 1rem;
+}
+
+/* Legal Pages Section */
+.footer .legal-pages p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer .legal-pages p:hover {
+  color: #007bff; /* Bootstrap primary color */
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Bottom Copyright Section */
+.footer .bg-dark {
+  background-color: #212529 !important; /* Dark grey */
+  color: #f8f9fa !important; /* Light text */
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  height: 10%;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .footer {
     text-align: center;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 1rem;
   }
-  
-   
-  @media (max-width: 768px) {
-    .footer {
-      text-align: center;
-    }
-  
-    .footer img {
-      width: 15%; / 
-    }
-  
-    .footer h4, .footer h5, .footer h6, .footer p {
-      font-size: 1rem;}}
+
+  .footer .row {
+    text-align: center;
+  }
+
+  /* Adjusting Image Size for Mobile */
+  .footer img {
+    width: 25%;
+  }
+
+  .footer h4, .footer h5, .footer h6, .footer p {
+    font-size: 1rem; /* Smaller font size for mobile */
+  }
+
+  /* Reducing padding and margin for better mobile alignment */
+  .footer .col-md-4 {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer .social-icons img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer .legal-pages {
+    text-align: center;
+  }
+
+  .footer .legal-pages p {
+    font-size: 14px;
+  }
+}
+
+/* Adjustments for Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .footer .col-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .footer .social-icons img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .footer h4, .footer h5, .footer h6, .footer p {
+    font-size: 0.9rem;
+  }
+
+  .footer .legal-pages p {
+    font-size: 12px;
+  }
+}

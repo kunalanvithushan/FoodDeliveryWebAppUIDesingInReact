@@ -1,0 +1,181 @@
+:root {
+    --body-background: #f9a539;
+    --primary-color: #ff6347;
+    --secondary-color: #ff8c00;
+    --accent-color: #fff7e6;
+    --text-color: #333333;
+    --heading-color: #d34d3c;
+    --button-color: #ff4500;
+    --hover-color: #ff6a1f;
+    --footer-background: #f1f1f1;
+    --border-color: #ddd;
+    --font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: var(--body-background);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .beforeStaffLogin-container {
+    background-color: var(--accent-color);
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+  }
+  
+  .beforeStaffLogin-text-center {
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 34px;
+    color: var(--primary-color);
+  }
+  
+  .beforeStaffLogin-form-group label,
+  .beforeStaffLogin-form-group label {
+    
+    color: var(--text-color);
+  }
+  
+  .beforeStaffLogin-form-control,
+   .beforeStaffLogin-form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  select.beforeStaffLogin-form-control:focus,
+  input.beforeStaffLogin-form-control:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px var(--primary-color);
+  }
+   
+  
+   .beforeStaffLogin-btn {
+    background-color: var(--button-color);
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+.beforeStaffLogin-btn:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .beforeStaffLogin-text-center {
+    text-align: center;
+  }
+  
+  .beforeStaffLogin-text-center p {
+    font-size: 14px;
+  }
+  
+  .beforeStaffLogin-text-centerlink {
+    color: #002aff;
+    text-decoration: none;
+    font-size: medium;
+  }
+  
+  .beforeStaffLogin-text-centerlink :hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+  }
+  
+
+  .password-field {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .password-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-input-container input {
+    padding-right: 30px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .password-toggle-icon {
+    position: absolute;
+    right: 10px;
+    color: #555;
+  }
+
+ 
+  .form-control {
+    height: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 40px; /* Ensure enough space for the icon */
+  }
+  
+  .input-container {
+    position: relative;  
+  }
+  
+  .lock {
+    position: absolute;
+    top: 50%;  
+    right: 10px; 
+    transform: translateY(-50%);  
+    cursor: pointer;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .form-control {
+      padding-right: 35px;  
+    }
+  
+    .lock {
+      right: 10px;  
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .form-control {
+      padding-right: 30px;  
+    }
+  
+    .lock {
+      right: 8px;  
+    }
+  }
+  form input[type="text"],
+form input[type="number"],
+form select {
+    margin: 0;  
+}
+.form-control:hover{
+  border: 1px solid var(--primary-color);
+
+}.form-control:focus{
+  border: 1px solid var(--primary-color);
+
+}
+
+
+ 

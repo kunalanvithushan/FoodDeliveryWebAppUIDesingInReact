@@ -1,0 +1,253 @@
+ 
+   :root {
+    --body-background: #f9a539;
+    --primary-color: #ff6347;
+    --secondary-color: #ff8c00;
+    --accent-color: #fff7e6;
+    --text-color: #333333;
+    --heading-color: #d34d3c;
+    --button-color: #ff4500;
+    --hover-color: #ff6a1f;
+    --footer-background: #f1f1f1;
+    --border-color: #ddd;
+    --font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: var(--body-background);
+    font-family: var(--font-family);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 10px;  
+  } 
+  
+  .login-card {
+    background-color: var(--accent-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .login-card h2 {
+    color: var(--heading-color);
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+  }
+  
+  .form-controlL {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .form-controlL:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 4px rgba(255, 99, 71, 0.5);
+  }
+  
+  .buttonLogin {
+    margin-top: 10%;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    background-color: var(--button-color);
+    width: 40%;
+  }
+  
+  .buttonLogin {
+    background-color: var(--button-color);
+    color: white;
+  }
+  
+  .buttonLogin:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .btn-link {
+    background: none;
+    border: none;
+  
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .btn-link:hover {
+    color: var(--hover-color);
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mt-3 {
+    margin-top: 1rem;
+  }
+  
+  .responsive-login-popup {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 1000px) {
+    
+  
+    .login-card {
+      padding: 0px;  
+    
+    }
+  
+    .form-controlL {
+      font-size: 14px;
+    }
+  
+    .buttonLogin {
+      font-size: 20px;  
+      padding: 8px 12px; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+     
+  
+    .login-card {
+      padding: 0px;
+    }
+  
+    .form-controlL {
+      font-size: 12px;
+    }
+  
+    .buttonLogin {
+      font-size: 18px;
+      padding: 6px 10px;
+    }
+     
+    }
+    absolute
+  
+    .swal2-close {
+      width: 40px; 
+      height: 40px; 
+      font-size: 40px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;  
+      border: none;
+      border-radius: 50%;  
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 9999;
+      transition: background-color 0.3s ease;
+    }
+
+    .password-field {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .password-input-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    
+    .password-input-container input {
+      padding-right: 30px;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+    
+    .password-toggle-icon {
+      position: absolute;
+      right: 10px;
+      color: #555;
+    }
+
+   
+    .form-control {
+      height: 40px;
+      padding: 0 10px;
+      box-sizing: border-box;
+      width: 100%;
+      padding-right: 40px; /* Ensure enough space for the icon */
+    }
+    .form-control:focus{
+      border: 1px solid var(--primary-color);
+    
+    }
+    .form-control:hover{
+      border: 1px solid var(--border-color);
+    
+    }
+    
+    .input-container {
+      position: relative;  
+    }
+    
+    .lock {
+      position: absolute;
+      top: 50%;  
+      right: 10px; 
+      transform: translateY(-50%);  
+      cursor: pointer;
+    }
+    
+    
+    @media (max-width: 768px) {
+      .form-control {
+        padding-right: 35px;  
+      }
+    
+      .lock {
+        right: 10px;  
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .form-control {
+        padding-right: 30px;  
+      }
+    
+      .lock {
+        right: 8px;  
+      }
+    }
+    
+ 
+

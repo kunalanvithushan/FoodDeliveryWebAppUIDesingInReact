@@ -1,0 +1,329 @@
+ /* Root Variables */
+:root {
+  --body-background: #f9a539;
+  --primary-color: #ff6347;
+  --secondary-color: #ff8c00;
+  --accent-color: #fff7e6;
+  --text-color: #333333;
+  --heading-color: #d34d3c;
+  --button-color: #ff4500;
+  --hover-color: #ff6a1f;
+  --footer-background: #f1f1f1;
+  --border-color: #ddd;
+  --font-family: 'Arial', sans-serif;
+}
+
+/* Customer Register Styles */
+.CustomerRegisterregister-container {
+  margin: 5%;
+  padding: 10%;
+  align-items: center;
+  background-color: var(--accent-color);
+}
+
+.CustomerRegistercardC {
+  background-color: var(--accent-color);
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.CustomerRegistercustomerh2 {
+  font-size: 1.8rem;
+  color: var(--heading-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.CustomerRegister-R_form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label Styles */
+.CustomerRegister label {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-family: var(--font-family);
+  transition: font-size 0.3s ease;
+}
+
+/* Input Styles */
+.CustomerRegisterform-control {
+  font-family: var(--font-family);
+  font-size: 1rem;
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.CustomerRegisterform-control:hover,
+.CustomerRegisterform-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Password Field Styles */
+.CustomerRegister-password-container {
+  position: relative;
+}
+
+.CustomerRegister-password-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--hover-color);
+  border-radius: 4px;
+  height: 40px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.CustomerRegister-eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Button Styles */
+.CustomerRegister-btn-primaryR {
+  padding: 10px;
+  font-size: 1.1rem;
+  background-color: var(--button-color);
+  border: none;
+  color: white;
+  width: 50%;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  margin-left: 25%;
+}
+
+.CustomerRegister-btn-primaryR:hover {
+  background-color: var(--hover-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .CustomerRegistercustomerh2 {
+    font-size: 2rem;
+  }
+
+  .CustomerRegistercardC {
+    width: 90%;
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .CustomerRegisterform-control {
+    font-size: 0.9rem;
+  }
+
+  .CustomerRegister-btn-primaryR {
+    font-size: 1rem;
+  }
+
+  /* Adjust label text size for smaller screens */
+  .CustomerRegister label {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .CustomerRegistercustomerh2 {
+    font-size: 1.8rem;
+  }
+
+  .CustomerRegistercardC {
+    padding: 15px;
+  }
+
+  .CustomerRegister-btn-primaryR {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  /* Adjust label text size for very small screens */
+  .CustomerRegister label {
+    font-size: 0.8rem;
+  }
+
+  .CustomerRegisterform-control {
+    font-size: 0.8rem;
+  }
+}
+
+/* Password Field Container */
+.password-field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Password Input with Icon */
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-container input {
+  padding-right: 30px; /* Space for icon */
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.password-field :focus {
+  outline:none; /* Focus outline */
+  border: 1px solid var(--border-color); /* Keep the original border color */
+  box-shadow: none; /* Optional: Remove any box-shadow if applied */
+}
+
+
+.password-toggle-icon {
+  position: absolute;
+  right: 10px;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Lock Icon */
+.lock {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Remove margin for text inputs and selects */
+.CustomerRegister-R_form-group input[type="text"],
+.CustomerRegister-R_form-group input[type="number"],
+.CustomerRegister-R_form-group select {
+  margin: 0;  /* Remove any unwanted margin */
+}
+
+
+.CustomerRegisterform-control {
+  font-family: var(--font-family);
+  font-size: 1rem;
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Focus effect without changing the border color */
+.CustomerRegisterform-control:focus {
+  outline:none; /* Focus outline */
+  border: 1px solid var(--border-color); /* Keep the original border color */
+  box-shadow: none; /* Optional: Remove any box-shadow if applied */
+}
+
+/* Hover effect */
+.CustomerRegisterform-control:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+.form-control:hover{
+  border: 1px solid var(--border-color);
+
+}
+/* Base label styles */
+label {
+  display: block; /* Ensures labels stack neatly above inputs */
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  transition: color 0.3s ease; /* Smooth transition for color changes */
+}
+
+/* Default label color */
+label {
+  color: #374151; /* Tailwind's gray-700 */
+}
+
+/* Error label color */
+label.error {
+  color: #dc2626; /* Tailwind's red-600 */
+}
+
+/* Responsive font sizes */
+label {
+  font-size: 1rem; /* Default size for most screens */
+}
+
+@media (max-width: 768px) {
+  label {
+    font-size: 0.9rem; /* Slightly smaller on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  label {
+    font-size: 0.9rem; /* Smaller font size for mobile screens */
+  }
+}
+.error{
+  color: #dc2626;  
+  font-size: 1rem;  
+  font-family: Arial, sans-serif;  
+  font-weight: 500;  
+  
+  line-height: 1.25;  
+  transition: opacity 0.3s ease-in-out;  
+
+}
+
+.loader {
+  width: 20px;
+  height: 12px;
+  display: block;
+  margin: auto;
+  position: relative;
+  border-radius: 4px;
+  color: #FFF;
+  background: currentColor;
+  box-sizing: border-box;
+  animation: animloader 0.6s 0.3s ease infinite alternate;
+}
+
+.loader::after,
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  width: 20px;
+  height: 12px;
+  background: currentColor;
+  position: absolute;
+  border-radius: 4px;
+  top: 0;
+  right: 110%;
+  animation: animloader 0.6s ease infinite alternate;
+}
+
+.loader::after {
+  left: 110%;
+  right: auto;
+  animation-delay: 0.6s;
+}
+
+@keyframes animloader {
+  0% {
+    width: 20px;
+  }
+  100% {
+    width: 48px;
+  }
+}

@@ -1,0 +1,489 @@
+:root {
+  --body-background: #ffffff; /* Light background */
+  --primary-color: #ff6347;
+  --secondary-color: #ff8c00;
+  --accent-color: #fff7e6;
+  --text-color: #333333;
+  --heading-color: #d34d3c;
+  --button-color: #ff4500;
+  --hover-color: #ff6a1f;
+  --footer-background: #f1f1f1;
+  --border-color: #ddd;
+  --font-family: 'Arial', sans-serif;
+  --star-gold: #FFD700;
+  --star-gray: #D3D3D3;
+  scroll-behavior: smooth;
+}
+
+.basket-card {
+  font-family: Arial, sans-serif;
+  background-color: var(--accent-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border: var(--border-color);
+}
+
+.basket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.basket-headerh2 {
+  font-size: 30px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.headIMG {
+  width: 50px;
+  height: 70px;
+}
+
+.address-section {
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  
+  padding: 20px;
+  border-radius: 10px;
+
+}
+
+.address-section h3 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--heading-color);
+  
+}
+.address-section label{
+
+  font-size: 18px;
+}
+ 
+.select-button-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the select and button */
+}
+
+/* Style for the select dropdown */
+.Cform-select {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color, #ccc); /* Use variable or fallback color */
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 60%;
+}
+
+.Cform-select:focus {
+  border-color: var(--primary-color, #007bff); /* Use variable or fallback color */
+  box-shadow: 0 0 4px var(--primary-color, #007bff);
+}
+
+
+.Cbtn-primary {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background-color: var(--primary-color, #007bff); /* Use variable or fallback color */
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+}
+
+.Cbtn-primary:hover {
+  background-color: var(--hover-color, #0056b3);
+  color: #ffffff; /* Use variable or fallback color */
+}
+
+
+/* Card container for the collapsible section */
+.AddcardA {
+ background-color: #ffffff;
+ border: var(--border-color);
+ border-radius:10px ;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  
+ padding: 10px;
+}
+
+/* Form styling */
+.Aform {
+  font-family: var(--font-family, Arial, sans-serif);
+}
+
+/* Label styling */
+.Aform-label {
+  font-size: 14px;
+  color: var(--text-color, #333);
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Select dropdown styling */
+.Aform-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 8px;
+  font-size: 16px;
+  color: var(--text-color, #333);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Aform-select:focus {
+  border-color: var(--primary-color, #007bff);
+  box-shadow: 0 0 4px var(--primary-color, #007bff);
+}
+
+/* Input styling */
+.Aform-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 8px;
+  font-size: 16px;
+  color: var(--text-color, #333);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Aform-control:focus {
+  border-color: var(--primary-color, #007bff);
+  box-shadow: 0 0 4px var(--primary-color, #007bff);
+}
+
+/* Button styling */
+.Addbtn {
+  padding: 10px 20px;
+  background-color: var(--button-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Addbtn:hover {
+  background-color:  var(--hover-color);
+}
+
+.Addbtn:focus {
+  box-shadow: 0 0 4px rgba(72, 180, 97, 0.8);
+}
+
+ 
+
+/* Collapsible container responsiveness */
+ 
+ 
+
+
+ 
+
+.dropdown-button {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.dropdown-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #cccccc;
+  outline: none;
+}
+
+.dropdown-options-container {
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.dropdown-option {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-option:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-no-results {
+  padding: 10px;
+  color: #999999;
+}
+
+.new-address-button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.new-address-button:hover {
+  background-color: #0056b3;
+}
+
+.new-address-form {
+  margin-top: 20px;
+}
+
+.new-address-form h3 {
+  margin-bottom: 10px;
+}
+
+.new-address-form select,
+.new-address-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+}
+
+.new-address-form button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.new-address-form button:hover {
+  background-color: #0056b3;
+}
+
+.order-summary2 {
+  margin-bottom: 10px;
+  font-size: 25px bold ;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  
+  border-radius: 10px;
+}
+
+.order-summary2 .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.delivery-info .row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+    
+}
+
+.border-box {
+  text-align: center;
+  border: 1px solid #cccccc;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+.ima-s {
+  width: 50px;
+  height: 50px;
+}
+
+.time {
+  font-size: 14px;
+  color: #666666;
+}
+
+.action-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.back-button,
+.confirm-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.back-button {
+  background-color: var(--button-color);
+}
+
+.back-button:hover {
+  background-color: var(--hover-color);
+}
+
+.back-icon {
+   
+  font-size: 26px;
+  font-weight: bold;
+   
+}
+
+.back-icon  {
+  margin-right: 5px; /* Space between arrow and text */
+  font-size: 18px;
+}
+
+.back-icon:hover {
+  background-color: var(--hover-color, #0056b3);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.confirm-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.confirm-button:hover {
+  background-color: #218838;
+}
+
+.Cadd-icon {
+  font-size: 25px; /* Consistent font size with .Cbtn-primary */
+  color: var(--footer-background); /* Use the same primary color */
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 16px; /* Match padding of .Cbtn-primary */
+  border-radius: 8px; /* Add border-radius for consistency */
+  text-decoration: none; /* Prevent underlining */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+  display: inline-block; /* Ensure it behaves like a button */
+  /* Optional: Add a background color if needed */
+
+   
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .basket-card {
+    padding: 15px;
+  }
+
+  .basket-headerh2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.selected-address {
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}   
+
+.selected-address h4{
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.new-address-button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.new-address-button:hover {
+  background-color: #0056b3;
+}
+
+.new-address-form {
+  margin-top: 15px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.new-address-form h3 {
+  margin-bottom: 15px;
+}
+
+.new-address-form select,
+.new-address-form input {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.new-address-form button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.new-address-form button:hover {
+  background-color: #0056b3;
+}
+
+.new-address-form button:last-child {
+  background-color: #f44336;
+}
+
+.new-address-form button:last-child:hover {
+  background-color: #d32f2f;
+}
+
+.new-address-form {
+  display: block;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+}

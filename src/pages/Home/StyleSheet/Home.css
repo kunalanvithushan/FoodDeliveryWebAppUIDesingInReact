@@ -1,0 +1,64 @@
+:root {
+  --body-background: #f9a539; /* Light warm beige background for a soft feel */
+  --primary-color: #ff6347; /* Tomato red for buttons, highlights */
+  --secondary-color: #ff8c00; /* Orange for secondary buttons or accents */
+  --accent-color: #fff7e6; /* Very light yellow for section backgrounds */
+  --text-color: #333333; /* Dark gray for readable text */
+  --heading-color: #d34d3c; /* Muted red for headings to keep consistency */
+  --button-color: #ff4500; /* Strong red for primary buttons */
+  --hover-color: #ff6a1f; /* A bright orange-red for hover effects */
+  --footer-background: #f1f1f1; /* Light gray background for footer */
+  --border-color: #ddd; /* Soft gray for borders */
+  --font-family: 'Arial', sans-serif; /* font family */
+}
+
+.body {
+  font-family: var(--font-family);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  margin-left: 2px;
+  margin-right: 2px;
+  scrollbar-width: 0px;
+  padding-top: 7%;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;  
+  overflow: hidden;  
+
+}
+
+.container {
+  width: 1025px;
+  background-color: var(--accent-color);
+  border: 2px solid var(--border-color);  
+  border-radius: 5px;
+  margin: 5%;
+  margin-bottom: 20%;
+  margin-top: 10%;
+  scrollbar-width: 0%;
+}
+
+ 
+ 
+.section {
+  opacity: 0;
+  transform: translateY(100px);
+  animation: fadeInUp 1.0s ease-out forwards;
+  scrollbar-width: 0%;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+ @media (max-width :1000px) {
+  
+
+  .main-container {
+     margin-top: 50px;
+  }
+ }

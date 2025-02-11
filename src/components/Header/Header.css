@@ -1,143 +1,175 @@
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
-}
-
- 
-:root { 
-  --background-color: #fbfbfb; /* Background color for the entire website, including individual sections */
-  --background-page-color: #ff0000;
-  --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #2d465e; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #5777ba; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
-
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
-:root {
-  --nav-color: #212529;  /* The default color of the main navmenu links */
-  --nav-hover-color: #f6f3d6; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #5777ba; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
-}
-
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
-.light-background {
-  --background-color: #f2f5fb;
-  --surface-color: #ffffff;
-}
-
-.dark-background {
-  --background-color: #060606;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #252525;
-  --contrast-color: #ffffff;
-}
-
-/* Smooth scroll */
-:root {
+  --body-background: #ffffff; /* Light background */
+  --primary-color: #ff6347;
+  --secondary-color: #ff8c00;
+  --accent-color: #fff7e6;
+  --text-color: #333333;
+  --heading-color: #d34d3c;
+  --button-color: #ff4500;
+  --hover-color: #ff6a1f;
+  --footer-background: #f1f1f1;
+  --border-color: #ddd;
+  --font-family: 'Arial', sans-serif;
+  --star-gold: #FFD700;
+  --star-gray: #D3D3D3;
   scroll-behavior: smooth;
 }
-.header {
-   
-  background-color: var(--surface-color);
-  padding: 15px 0;
-  transition: all 0.5s;
-  z-index: 997;
-  
+
+/* Global Styles */
+body {
+  background-color: var(--body-background);
+  font-family: var(--font-family);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+ 
+.nav-link {
+  font-size: 1.2rem;  
+  font-weight: 500;  
+  color: var(--text-color); 
+  transition: color 0.3s ease;  
 }
 
-.header .logo {
-  line-height: 1;
-}
 
-.header .logo  {
-  font-size: 40px;
-    margin: 0px 0 0;
-    font-weight: 1000;
-    font-family: 'Protest Strike' ;
-    color: #ff0000;
-    text-decoration: none;}
 
-.header .btn-getstarted,
-.header .btn-getstarted:focus {
-  color: #101010;
-  background:  #f4f0f0;
-  font-size: 14px;
-  padding: 8px 25px;
-  margin: 0 0 0 30px;
-  border-radius: 50px;
-  transition: 0.3s;
-}
-
-.header .btn-getstarted:hover,
-.header .btn-getstarted:focus:hover {
-  color: var(--contrast-color);
-  background: black  ;
-}
-
-.reviews{
-color: #000;
-}
-
-mobile-nav-toggle {
-  font-size: 24px;
-  color: var(--default-color);
-}
-
-.offcanvas {
-  background-color: var(--nav-mobile-background-color);
-  width: 300px;
-  font-family: var(--nav-font);
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-}
-
-.offcanvas .offcanvas-title {
-  font-size: 24px;
-  font-weight: 700;
+h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
 }
 
-.offcanvas .nav-link {
-  color: var(--nav-color);
-  margin: 10px 0;
-  font-size: 18px;
+a {
   text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.HeaderImg{
+  max-width: 6%;
+  max-height: 6% ;
+  margin-right: 25%;
+  
+}
+/* Header */
+.header {
+  background-color: #f7f7f7;
+  padding: 5px 5px;
+  transition: all 0.5s ease;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  
+}
+
+
+ 
+ 
+
+ 
+ .logoH {
+  display: flex;
+  align-items: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: #ff6347;  
+  text-decoration: none;
+  font-family: 'Protest Strike';  
+}
+
+ 
+  
+
+.header .btn-getstarted {
+  color: var(--accent-color);
+  background-color: var(--primary-color);
+  font-size: 14px;
+  padding: 8px 25px;
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+  border-color: var(--border-color);
+}
+
+.header .btn-getstarted:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+/* Navigation */
+.navbar {
+  font-size: 16px;
+}
+
+.mobile-nav-toggle {
+  font-size: 24px;
+  color: var(--text-color);
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: flex-end; 
+  cursor: pointer;
+}
+
+.hamburger-icon {
+  color: var(--text-color); /* Customize icon color */
+}
+/* Offcanvas Navigation */
+.offcanvas {
+  background-color: var(--accent-color); /* Set background color from root variable */
+  width: 200px;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+.custom-offcanvas {
+  width: 50% !important;  
+}
+
+.offcanvas .offcanvas-header {
+  background-color: var(--primary-color); /* Set header color for better visibility */
+  border-bottom: 1px solid var(--border-color);
+}
+
+.offcanvas-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.offcanvas .nav-link {
+  font-size: 18px;
+  margin: 10px 0;
+  color: var(--text-color);
   transition: color 0.3s;
 }
 
 .offcanvas .nav-link:hover {
-  color: var(--nav-hover-color);
+  color: var(--hover-color);
 }
 
-.offcanvas .btn-getstarted {
-  width: 100%;
-  margin-top: 15px;
-  padding: 10px;
-  font-size: 16px;
-  font-family: var(--nav-font);
-  text-align: center;
+/* Cart Section */
+.cart-container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
 }
-
 
 .cart-button {
-   
-  background: white;
-  border: none;
-  padding: 1px;
-  border-radius: 5px;
-  cursor: pointer;
   display: flex;
   align-items: center;
-  color: black;
-  font-size: 14px;
+  background-color: var(--accent-color);
+  border: 1px solid var(--border-color);
+  padding: 7px 10px;
+  border-radius: 5px;
+  color: var(--text-color);
   font-weight: bold;
+  transition: all 0.3s;
 }
 
 .cart-button img {
@@ -145,7 +177,172 @@ mobile-nav-toggle {
   height: 30px;
   margin-right: 5px;
 }
-.cart-container {
-  display: flex;
-  justify-content: flex-end;  
+
+.cart-button:hover {
+  background-color: var(--accent-color);
+  border: 1px solid var(--border-color);
 }
+.offcanvas .btn-getstarted {
+  color: var(--accent-color) !important;
+  background-color: var(--secondary-color) !important;
+  font-size: 14px;
+  padding: 8px 25px;
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  border: var(--border-color);
+}
+
+.offcanvas .btn-getstarted img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.offcanvas .btn-getstarted:hover {
+  background-color: var(--accent-color) !important;
+  color: var(--text-color) !important;
+} 
+
+/* Apply to Navbar Links */
+.HeaderLinks .ms-auto .nav-link {
+  font-size: 1.2rem; /* Set the default font size */
+  font-weight: 400; /* Optional: Adjust font weight */
+  color: var(--text-color); /* Custom text color */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Navbar Link Hover Effect */
+.HeaderLinks .ms-auto .nav-link:hover {
+  color: var(--primary-color); /* Hover color */
+  text-decoration: none; /* Remove underline on hover */
+}
+
+ 
+/* @media (max-width: 700px) {
+  .HeaderImg{
+    max-width: 15%;
+    max-height: 15% ;
+    
+    
+  }
+  .logoH{
+
+    font-size:40px ;
+  }
+  .cart-button {
+   
+   
+     
+    padding: 4px 8px;
+    border-radius: 5px;
+   
+     
+   
+  }
+  
+  .cart-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+} */
+
+@media (min-width: 926px) {
+  .HeaderImg {
+    max-width: 5%;
+    max-height: 5%;
+    margin-right: 12%;  
+  }
+
+  .logoH {
+    font-size: 50px;
+  }
+
+  .cart-button {
+    
+    border-radius: 10px;
+  }
+
+  .cart-button img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .nav-link {
+    font-size: 20px; 
+  }
+
+  .btn-getstarted {
+    font-size: 16px;
+    padding: 10px 30px;
+  }
+}
+
+
+@media (max-width: 924px) {
+  .HeaderImg {
+    max-width: 10%;
+    max-height: 10%;
+    margin-right: 35%; /* Keep image close to logo */
+  }
+
+  
+
+  .cart-button {
+    padding: 6px 12px;
+    border-radius: 8px;
+  }
+
+  .cart-button img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .nav-link {
+    font-size: 18px; 
+  }
+
+  .btn-getstarted {
+    font-size: 13px;
+    padding: 7px 22px;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .HeaderImg {
+    max-width: 10%;
+    max-height: 10%;
+    margin-right: 2%; /* Keep the image near the logo */
+  }
+
+  .logoH {
+    font-size: 35px; /* Smaller font size for better fit */
+  }
+
+  .cart-button {
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .cart-button img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-link {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  .btn-getstarted {
+    font-size: 12px; /* Adjust button text size */
+    padding: 6px 20px;
+  }
+}
+ 
+ 
+ 
