@@ -13,8 +13,18 @@ import OpenOtpVerificationPopup from "./pages/authPages/CustomerRegisterVerify.j
  
 //import PopupBasket1 from "./popupBasket/popupBasket1.jsx"
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route,Link } from 'react-router-dom';
 import PopupBasket1 from "./popupBasket/popupBasket1";
+ //shana
+// import Sidebar from './pages/staff/DeliveryMan/Sidebar';
+// import Delivery from './pages/staff/DeliveryMan/Delivery';
+// import DeliveryProfile from './pages/staff/DeliveryMan/DeliveryProfile';
+// import Deliverystatus from './pages/staff/DeliveryMan/Deliverystatus';
+// import History from './pages/staff/DeliveryMan/History';
+// import Notification from './pages/staff/DeliveryMan/Notification';
+
+
+
 //Gowsikan
  
 import MyProfile from './pages/CustomerProfile/MyProfile';
@@ -36,8 +46,12 @@ function App() {
 
 
   return (
+
+
     <>
-      {/* <div className='d-flex'>
+
+    
+       {/* <div className='d-flex'>
             <div className='col-auto'>
             <MyProfile />
              </div>
@@ -56,27 +70,63 @@ function App() {
     
     
          </div> */}
-           <Header />
+           {/* <Header />
            <div className="main-container">
            <Home /> 
            </div>
-           <Footer />  
+           <Footer />   */}
+             
+    
+    
+       
+        <Header />
+       <div div className="main-container" style={{ paddingTop: "100px" }}>
+        <section id="Home">
+         <Home />  
+        </section>
+       </div>
+       <Footer />  
 
- 
-      <Routes>
+  
+        <Routes>
         <Route path="/" element={<Home></Home>}/>
         <Route path="/login"  element={ <LoginPopup/> } />
         <Route path="/customer-register" element={ < OpenRegisterPopup/> } />
         <Route path="/otp-verification/:userId" element={<OpenOtpVerificationPopup/>}/>
-      </Routes>
-    
+      </Routes>  
 
 
 
 
- {/* <PopupBasket1/> */}
+ 
       
+ 
      {/* <Admin/> */}
+  
+      
+
+{/* 
+        <div className="app">
+       <Sidebar />
+        <div className="main-content">
+          <Routes>
+           
+            <Route path="/delivery" element={<Delivery />} />
+            <Route path="/profile" element={<DeliveryProfile />} />
+            <Route path="/deliverystatus" element={<Deliverystatus />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/notification" element={<Notification />} />
+
+
+            { <Route path="/" element={<Delivery />} />  }
+            
+          </Routes>
+        </div>
+      </div> */}
+
+        
+        
+         
 
  
      {/* <LoginPage/> */}
@@ -93,37 +143,4 @@ export default App;
 
 
 
-// import React, { useEffect } from "react";
-// import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-// import Swal from "sweetalert2";
-
-// const Home = () => <h1>Home Page</h1>;
-
-// const AlertPage = () => {
-//   useEffect(() => {
-//     Swal.fire({
-//       title: "Alert!",
-//       text: "This is a SweetAlert popup triggered by a route!",
-//       icon: "success",
-//       confirmButtonText: "OK",
-//     });
-//   }, []);
-
-  
-// };
-
-// const App = () => {
-//   return (
-//     <>
-//     <Home/>
-    
-   
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/alert" element={<AlertPage />} />
-//       </Routes>
-//       </>
-//   );
-// };
-
-// export default App;
+ 

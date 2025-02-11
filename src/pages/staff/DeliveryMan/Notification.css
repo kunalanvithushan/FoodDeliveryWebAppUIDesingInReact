@@ -1,0 +1,201 @@
+/* Container for the notifications */
+.notification-container {
+  margin: 30px auto;
+  padding: 25px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  
+  /* Position the container on the right side */
+  position: absolute;
+  top: 20px;
+  right: 40px;  /* Aligns the container to the right side */
+  left: auto;   /* Ensure it doesn't have left margin */
+   /* Optional: Set a maximum width */
+   width: 68%; 
+   max-width: 1000px; /* Allow container to take full width within the limit */
+  box-sizing: border-box;
+
+  /* Set a fixed height for testing */
+  height: 500px; /* Set a fixed height for the container for testing */
+  overflow-y: auto; /* Enable vertical scrolling */
+  transition: all 0.3s ease;
+
+  /* Change the border color to orange */
+  border: 10px solid #e20b0b; /* Orange border color */
+}
+
+/* Custom scrollbar styling */
+.notification-container::-webkit-scrollbar {
+  width: 15px; /* Width of the scrollbar */
+}
+
+.notification-container::-webkit-scrollbar-thumb {
+  background-color: gray; /* Black color for the scrollbar thumb */
+  border-radius: 10px;
+}
+
+.notification-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Light background for the track */
+}
+
+/* Title Styling */
+.notification-container h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Notification list styles */
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Reduced gap */
+}
+
+/* Individual notification item styling */
+.notification-item {
+  background-color: #fff;
+  padding: 8px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;  /* Needed for new-badge position */
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+/* Hover effect for notification items */
+.notification-item:hover {
+  background-color: #f4f4f4;
+  transform: translateX(5px);
+}
+
+/* Styling for unread notifications */
+.notification-item.unread {
+  border-left: 5px solid #3498db;  /* Bright blue border */
+  background-color: #ecf7ff; /* Light blue background */
+}
+
+.notification-item.unread:hover {
+  background-color: #d6eaff;
+}
+
+/* Styling for read notifications */
+.notification-item.read {
+  background-color: #f9f9f9;
+  border-left: 5px solid #95a5a6; /* Subtle gray border */
+}
+
+/* Notification message styling */
+.notification-message p {
+  margin: 0;
+  font-size: 16px;
+  color: #34495e;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Date styling */
+.notification-date {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-top: 5px;
+  text-align: right;
+}
+
+/* Action buttons container */
+.notification-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Mark as read button */
+.mark-as-read,
+.clear-notification {
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  display: inline-block;
+  width: 140px;  /* Ensure equal width */
+  text-align: center;
+}
+
+/* Mark as read button styles */
+.mark-as-read {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.mark-as-read:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Clear notification button styles */
+.clear-notification {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.clear-notification:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+/* New notification badge */
+.notification-item .new-badge {
+  background-color: #f39c12;  /* Bright yellow */
+  color: white;
+  padding: 4px 8px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 768px) {
+  .notification-container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .notification-container h2 {
+    font-size: 22px;
+  }
+
+  .notification-item {
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notification-message p {
+    font-size: 14px;
+  }
+
+  .notification-actions {
+    margin-top: 10px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mark-as-read,
+  .clear-notification {
+    width: 100%;  /* Full width for mobile */
+    font-size: 16px;
+  }
+}
