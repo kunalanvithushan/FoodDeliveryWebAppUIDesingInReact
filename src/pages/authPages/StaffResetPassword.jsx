@@ -4,19 +4,19 @@ import withReactContent from "sweetalert2-react-content";
 //import { openOtpVerificationPopup } from "../authPages/OtpVerification";  // Correct path
 import { openVerificationPopup } from "../authPages/StaffPasswordVerify"; // Correct path
  import '.././/authPages/StyleSheet/StaffResetPassword.css'
-
+ import { useNavigate } from "react-router-dom";
 const MySwal = withReactContent(Swal);
 
 const StaffResetPasswordForm = () => {
   const [email, setEmail] = useState("");
 
   const handleStaffEmailSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();  
 
-    // Close the current popup
+     
     Swal.close();
 
-    // Open the OTP verification popup
+    
     openVerificationPopup(email);
   };
 
@@ -47,6 +47,7 @@ const StaffResetPasswordForm = () => {
 };
 
 export const openStaffResetPasswordPopup = () => {
+  
   MySwal.fire({
     showCloseButton: true,
     showConfirmButton: false,
@@ -65,7 +66,7 @@ export const openStaffResetPasswordPopup = () => {
       closeButton.addEventListener("click", () => {
          
         popup.classList.add("animate__animated", "animate__fadeOut");
-        setTimeout(() => MySwal.close(), 500); // Delay to allow the animation to complete
+        setTimeout(() => MySwal.close(), 500);  
       });
     },
     

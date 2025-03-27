@@ -53,19 +53,20 @@
     margin-bottom: 5px;
     color: var(--text-color);
   }
-  
-  .form-controlL {
-    width: 100%;
+  .form-controlL, .form-control {
+    width: 80%; /* Set a smaller width for input fields */
+    margin: 0 auto; /* Center align the input fields */
     padding: 10px;
     border: 1px solid var(--border-color);
     border-radius: 5px;
     font-size: 16px;
+    text-align: left; /* Align text to the left */
   }
   
-  .form-controlL:focus {
+  .form-controlL:focus, .form-control:focus {
     border-color: var(--primary-color);
     outline: none;
-    box-shadow: 0 0 4px rgba(255, 99, 71, 0.5);
+    box-shadow: 0 0 5px rgba(255, 99, 71, 0.5);
   }
   
   .buttonLogin {
@@ -77,19 +78,15 @@
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     font-size: 20px;
     background-color: var(--button-color);
     width: 40%;
   }
   
-  .buttonLogin {
-    background-color: var(--button-color);
-    color: white;
-  }
-  
   .buttonLogin:hover {
     background-color: var(--hover-color);
+    transform: translateY(-2px);
   }
   
   .btn-link {
@@ -123,16 +120,16 @@
     
   
     .login-card {
-      padding: 0px;  
+      padding: 10px;  
     
     }
   
-    .form-controlL {
+    .form-controlL, .form-control {
       font-size: 14px;
     }
   
     .buttonLogin {
-      font-size: 20px;  
+      font-size: 18px;  
       padding: 8px 12px; 
     }
   }
@@ -141,15 +138,15 @@
      
   
     .login-card {
-      padding: 0px;
+      padding: 5px;
     }
   
-    .form-controlL {
+    .form-controlL, .form-control {
       font-size: 12px;
     }
   
     .buttonLogin {
-      font-size: 18px;
+      font-size: 16px;
       padding: 6px 10px;
     }
      
@@ -200,22 +197,6 @@
     }
 
    
-    .form-control {
-      height: 40px;
-      padding: 0 10px;
-      box-sizing: border-box;
-      width: 100%;
-      padding-right: 40px; /* Ensure enough space for the icon */
-    }
-    .form-control:focus{
-      border: 1px solid var(--primary-color);
-    
-    }
-    .form-control:hover{
-      border: 1px solid var(--border-color);
-    
-    }
-    
     .input-container {
       position: relative;  
     }
@@ -250,4 +231,3 @@
     }
     
  
-

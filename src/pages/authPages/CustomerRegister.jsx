@@ -4,6 +4,9 @@ import withReactContent from "sweetalert2-react-content";
 import "../../pages/authPages/StyleSheet/CustomerRegister.css";
 import { useNavigate } from "react-router-dom";
 import BaseURL from "../../../config";
+import {showErrorToast} from '../../utils/toastNotifications.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 const MySwal = withReactContent(Swal);
 
 const RegisterForm = ({ handleRegisterSubmit }) => {
@@ -12,17 +15,17 @@ const RegisterForm = ({ handleRegisterSubmit }) => {
   const [confirm_password, setConfirmPassword] = useState("");
   const [email, setEmail] = useState("");
   const [phone_no, setPhoneNo] = useState("");
-  const [isPasswordVisible, setPasswordVisible] = useState(false);
-  const [isConfirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
   const [errors, setErrors] = useState('');
   const APIUrl = BaseURL.API_BASE_URL;
   const [loading, setLoading] = useState(false);
   // password visibility toggle
   const togglePasswordVisibility = () => {
-    setPasswordVisible(prevState => !prevState);
+    setIsPasswordVisible(prevState => !prevState);
   };
   const toggleConfirmPasswordVisibility = () => {
-    setConfirmPasswordVisible(prevState => !prevState);
+    setIsConfirmPasswordVisible(prevState => !prevState);
   };
 
   const handleChange = (event) => {
@@ -31,9 +34,6 @@ const RegisterForm = ({ handleRegisterSubmit }) => {
       setPhoneNo(inputValue);
     }
   };
-
-
-
   const validateInputs = () => {
     let newErrors = [];
     if (phone_no.length !== 10) {
@@ -57,11 +57,11 @@ const RegisterForm = ({ handleRegisterSubmit }) => {
     if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
       newErrors.push("Password must include at least one special character.");
     }
-     
+
     if (newErrors.length > 0) {
       setErrors(newErrors.join(" "));
       setTimeout(() => {
-        setErrors(""); 
+        setErrors("");
       }, 30000);
       return;
     }
@@ -70,10 +70,13 @@ const RegisterForm = ({ handleRegisterSubmit }) => {
 
 
   const handleSubmit = (e) => {
-    setLoading(true);
     e.preventDefault();
+    setLoading(true);  
     if (validateInputs()) {
-      handleRegisterSubmit(e, { username, password, email, phone_no,confirm_password });
+      const formData = { username, password, email, phone_no, confirm_password };
+      handleRegisterSubmit(e, formData, setLoading);  
+    } else {
+      setLoading(false);  
     }
   };
 
@@ -100,7 +103,7 @@ const RegisterForm = ({ handleRegisterSubmit }) => {
 
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <div className="input-container">
+            <div style={{ position: 'relative' }}>
               <input
                 type={isPasswordVisible ? "text" : "password"}
                 id="password"
@@ -110,23 +113,15 @@ const RegisterForm = ({ handleRegisterSubmit }) => {
                 placeholder={errors.password || "Enter your password"}
                 required
               />
-              <div className="lock" onClick={togglePasswordVisibility}>
-                {isPasswordVisible ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" fill="currentColor">
-                    <path d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z" />
-                  </svg>
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" fill="currentColor">
-                    <path d="M144 144c0-44.2 35.8-80 80-80c31.9 0 59.4 18.6 72.3 45.7c7.6 16 26.7 22.8 42.6 15.2s22.8-26.7 15.2-42.6C331 33.7 281.5 0 224 0C144.5 0 80 64.5 80 144l0 48-16 0c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-192c0-35.3-28.7-64-64-64l-240 0 0-48z" />
-                  </svg>
-                )}
-              </div>
+              <button type="button" onClick={togglePasswordVisibility} style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: 'black' }}>
+                <FontAwesomeIcon icon={isPasswordVisible ? faEyeSlash : faEye} />
+              </button>
             </div>
           </div>
 
           <div className="form-group">
             <label htmlFor="confirm_password">Confirm Password</label>
-            <div className="input-container">
+            <div style={{ position: 'relative' }}>
               <input
                 type={isConfirmPasswordVisible ? "text" : "password"}
                 className="form-control"
@@ -136,17 +131,9 @@ const RegisterForm = ({ handleRegisterSubmit }) => {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
-              <div className="lock" onClick={toggleConfirmPasswordVisibility}>
-                {isConfirmPasswordVisible ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" fill="currentColor">
-                    <path d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z" />
-                  </svg>
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" fill="currentColor">
-                    <path d="M144 144c0-44.2 35.8-80 80-80c31.9 0 59.4 18.6 72.3 45.7c7.6 16 26.7 22.8 42.6 15.2s22.8-26.7 15.2-42.6C331 33.7 281.5 0 224 0C144.5 0 80 64.5 80 144l0 48-16 0c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-192c0-35.3-28.7-64-64-64l-240 0 0-48z" />
-                  </svg>
-                )}
-              </div>
+              <button type="button" onClick={toggleConfirmPasswordVisibility} style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: 'black' }}>
+                <FontAwesomeIcon icon={isConfirmPasswordVisible ? faEyeSlash : faEye} />
+              </button>
             </div>
           </div>
 
@@ -191,13 +178,12 @@ const RegisterForm = ({ handleRegisterSubmit }) => {
   );
 };
 
-const openRegisterPopup = () => {
+const OpenRegisterPopup = () => {
   const navigate = useNavigate();
-  const handleRegisterSubmit = async (e, formData) => {
+  const [errorMessage, setErrorMessage] = useState('');
+  const handleRegisterSubmit = async (e, formData,setLoading) => {
     e.preventDefault();
-  
-    
-  
+    console.log(formData)
     const APIUrl = BaseURL.API_BASE_URL;
     try {
       const response = await fetch(`${APIUrl}/auth/customer`, {
@@ -207,24 +193,25 @@ const openRegisterPopup = () => {
         },
         body: JSON.stringify(formData)
       });
-  
+
       const result = await response.json();
-  
+
       if (response.ok && result.status) {
-        const userId = result.data?.user_id;
-        if (!userId) {
-          console.error("User ID is missing in response!");
+        const user_id = result.data?.user_id;
+        console.log(user_id)
+        if (!user_id) {
+          showErrorToast("something went wrong try again!");
           return;
         }
-        navigate(`/otp-verification/${userId}`);
+        console.log(user_id);
+        navigate(`/verify-otp/${user_id}`);
       } else {
-        console.error("Error:", result.meta?.message);
+        showErrorToast(result.meta?.message);
       }
     } catch (error) {
       console.error("Request failed:", error);
-    }
-    finally {
-      formData.setLoading(false);  
+    } finally {
+       setLoading(false);
     }
   };
   useEffect(() => {
@@ -255,7 +242,7 @@ const openRegisterPopup = () => {
   }, []);
 };
 
- 
 
 
-export default openRegisterPopup;
+
+export default OpenRegisterPopup;

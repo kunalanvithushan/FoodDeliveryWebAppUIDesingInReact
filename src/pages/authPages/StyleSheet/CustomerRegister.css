@@ -241,6 +241,19 @@
   border: 1px solid var(--border-color);
 
 }
+
+.input-password {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.input-password:hover {
+  border-color: #ff6a1f;
+}
+
 /* Base label styles */
 label {
   display: block; /* Ensures labels stack neatly above inputs */

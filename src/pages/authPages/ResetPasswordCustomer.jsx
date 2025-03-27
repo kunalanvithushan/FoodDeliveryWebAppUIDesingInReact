@@ -46,7 +46,7 @@ const ResetPasswordForm = () => {
   );
 };
 
-export const openResetPasswordPopup = () => {
+export const OpenResetPasswordPopup = () => {
   MySwal.fire({
     showCloseButton: true,
     showConfirmButton: false,
@@ -71,3 +71,5 @@ export const openResetPasswordPopup = () => {
     },
   });
 };
+
+export default OpenResetPasswordPopup;

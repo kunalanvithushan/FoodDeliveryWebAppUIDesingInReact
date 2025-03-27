@@ -1,35 +1,117 @@
-import React, { useState } from "react";
+import React, { useState,useEffect, useContext } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import "../../pages/authPages/StyleSheet/StaffLogin.css"; // Assuming you have custom CSS for styling
 import {openStaffResetPasswordPopup} from "../authPages/StaffResetPassword"
 const MySwal = withReactContent(Swal);
+import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import {showErrorToast,showWarningToast,showSuccessToast} from '../../utils/toastNotifications'
+import BaseURL from "../../../config";
+import  AuthContext  from "../../context/AuthContext";
+ 
 
-const StaffLoginForm = ({onStaffResetPasswordPopup}) => {
+
+const StaffLoginForm = ({onStaffResetPasswordPopup,verifyStaffAccount,navigate,setAuth}) => {
   const [role, setRole] = useState("");
+  const [roles, setRoles] = useState([]);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+ const [loading, setLoading] = useState(false);
+ const APIUrl = BaseURL.API_BASE_URL;
+
+
+
+ useEffect(() => {
+  const fetchRoles = async () => {
+    try {
+      const response = await fetch(`${APIUrl}/getall_role`);  
+      const result = await response.json();
+      if (result.status && result.data) {
+        setRoles(result.data);  
+      }
+    } catch (error) {
+      console.error("Error fetching roles:", error);
+    }
+  };
+  fetchRoles();
+}, []);
  const togglePasswordVisibility = () => {
   setIsPasswordVisible((prevState) => !prevState);
 };
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
 
-    // Simulate login logic here
-    if (username && password) {
-      Swal.fire({
-        icon: "success",
-        title: "Login Successful",
-        text: `Welcome, ${username}!`,
-      });
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Login Failed",
-        text: "Please enter your username and password.",
-      });
+
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true)
+    console.log('Submitting form with values:', { username, password, role });
+    console.log('Username:', username);
+    console.log('Password:', password);
+    console.log('Role:', role);
+    if (!username || !password || !role) {
+      showWarningToast('Please fill in all fields.');
+      setLoading(false);
+      return;
     }
+    if (!username) {
+      showWarningToast('Username is required.');
+      setLoading(false);
+      return;
+    }
+    if (!password) {
+      showWarningToast('Password is required.');
+      setLoading(false);
+      return;
+    }
+    if (!role) {
+      showWarningToast('Role is required.');
+      setLoading(false);
+      return;
+    }
+  
+   
+    const formData = { email: username, password, type: role };
+
+    try {
+      const response = await fetch(`${APIUrl}/auth/systemstaff_login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+  
+      console.log('Response Status:', response.status);
+      const data = await response.json(); // Convert response to JSON
+      console.log('Response Data:', data); // Log the response data
+  
+      if (!response.ok) {
+        // Handle different error messages
+        if (data.error?.statusCode === 404) {
+          showErrorToast("SystemStaff not found");
+        } else if (data.error?.statusCode === 400) {
+          showErrorToast("Wrong username or password");
+        } else {
+          showErrorToast(data.meta?.message || "Login failed");
+        }
+        return;
+      }
+      if (data.status) {
+        showSuccessToast("Login successful");
+        console.log("User Data:", data.data.token);
+        setAuth({username,password,roles:data.data.role,accessToken:data.data.token})  
+        localStorage.setItem("token",data.data.token);
+        navigate("/admin-dash-board");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);  
+      showErrorToast("An error occurred while logging in. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+    
   };
 
   return (
@@ -40,17 +122,17 @@ const StaffLoginForm = ({onStaffResetPasswordPopup}) => {
         <div className="beforeStaffLogin-form-group">
           <label htmlFor="role">Select Role</label>
           <select
-            className="beforeStaffLogin-form-control"
-            id="role"
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
-            required
-          >
-            <option value="">-- Select Role --</option>
-            <option value="admin">Admin</option>
-            <option value="manager">Manager</option>
-            <option value="staff">Staff</option>
-          </select>
+  className="beforeStaffLogin-form-control"
+  id="role"
+  value={role}
+  onChange={(e) => setRole(e.target.value)}
+  required
+>
+  <option value=""> </option>
+  {roles.map((role, index) => (
+    <option key={index} value={role}>{role}</option> // Using index as key since roles are strings
+  ))}
+</select>
         </div>
 
         {/* Username Field */}
@@ -70,46 +152,15 @@ const StaffLoginForm = ({onStaffResetPasswordPopup}) => {
         {/* Password Field */}
         
 <label htmlFor="password">Password</label>
-<div className="input-container">
-  <input
-    type={isPasswordVisible ? "text" : "password"}
-    className="form-control"
-    id="password"
-    placeholder="Enter your password"
-    required
-  />
-  <div
-    className="lock"
-    onClick={togglePasswordVisibility}
-  >
-    {isPasswordVisible ? (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 448 512"
-        width="20"
-        height="20"
-        fill="currentColor"
-      >
-        {/* Eye Slash Icon */}
-        <path d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z" />
-      </svg>
-    ) : (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 448 512"
-        width="20"
-        height="20"
-        fill="currentColor"
-      >
-        {/* Eye Icon */}
-        <path d="M144 144c0-44.2 35.8-80 80-80c31.9 0 59.4 18.6 72.3 45.7c7.6 16 26.7 22.8 42.6 15.2s22.8-26.7 15.2-42.6C331 33.7 281.5 0 224 0C144.5 0 80 64.5 80 144l0 48-16 0c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-192c0-35.3-28.7-64-64-64l-240 0 0-48z" />
-      </svg>
-    )}
-  </div>
+<div style={{ position: 'relative' }}>
+  <input type={isPasswordVisible ? 'text' : 'password'} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="input-password" />
+  <button type="button" onClick={togglePasswordVisibility} style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: 'black' }}>
+    <FontAwesomeIcon icon={isPasswordVisible ? faEyeSlash : faEye} />
+  </button>
 </div>
         {/* Submit Button */}
-        <button type="submit" className="beforeStaffLogin-btn ">
-          Login
+        <button type="submit" className="beforeStaffLogin-btn " disabled={loading}>
+          {loading ? 'Loading...' : 'Login'}
         </button>
       </form>
 
@@ -117,8 +168,18 @@ const StaffLoginForm = ({onStaffResetPasswordPopup}) => {
       <div className="">
         <p>
           Forgot your password?{" "}
-          <a href="#" className="beforeStaffLogin-text-centerlink" onClick={ onStaffResetPasswordPopup}>
+          <a href="" className="beforeStaffLogin-text-centerlink" onClick={ onStaffResetPasswordPopup}>
             Reset Password
+          </a>
+        </p>
+      </div>
+
+
+      <div className="">
+        <p>
+           did you verify your account ?{" "}
+          <a href="" className="beforeStaffLogin-text-centerlink" onClick={verifyStaffAccount}>
+            verify
           </a>
         </p>
       </div>
@@ -126,21 +187,32 @@ const StaffLoginForm = ({onStaffResetPasswordPopup}) => {
   );
 };
 
-export const openStaffLoginPopup = () => {
+const OpenStaffLoginPopup = () => {
+  const navigate=useNavigate()
+  const { setAuth } = useContext(AuthContext);
  const handleStaffResetPasswordClick = () => {
     console.log("Register");
     MySwal.close();
     openStaffResetPasswordPopup()
   };
 
+
+  const HandleVerifyStaffAccount=()=>{
+
+     navigate('/verify-staff-emails')
+    MySwal.close();
+     
+  }
+  useEffect(() => {
   MySwal.fire({
     showCloseButton: true,
     showConfirmButton: false,
     allowOutsideClick: false,
     html: <StaffLoginForm 
-    
+    navigate={navigate}
     onStaffResetPasswordPopup={handleStaffResetPasswordClick}
-    
+    verifyStaffAccount={HandleVerifyStaffAccount}
+    setAuth={setAuth}
     />,
     customClass: {
       popup: "responsive-staff-login-popup",
@@ -160,4 +232,6 @@ export const openStaffLoginPopup = () => {
     },
     width: "600px",
   });
+}, []);
 };
+export default OpenStaffLoginPopup;
